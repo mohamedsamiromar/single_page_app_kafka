@@ -1,0 +1,4 @@
+{"type":"COMMAND", "message_id": "1234a", "payload": [{"a":"b"}]}
+{"type":"COMMAND", "message_id": "1234b", "payload": []}
+{"type":"COMMAND", "message_id": "1234c", "payload": [{"a":"b", "c":{"d":5}}]}
+{"type":"COMMAND", "message_id": "1234d", "payload": [{"e": ["f", "g", "h"]}]}

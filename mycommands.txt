@@ -1,0 +1,18 @@
+--- ACCESS BASH
+docker exec -it kafka /bin/bash
+
+
+--- SHOW ALL TOPICS
+kafka-topics --list --zookeeper zookeeper:2181
+
+
+--- DELETE
+kafka-topics --zookeeper zookeeper:2181 --delete --topic telemetry
+kafka-topics --zookeeper zookeeper:2181 --delete --topic commands
+kafka-topics --zookeeper zookeeper:2181 --delete --topic feedback
+
+
+--- CONSUMERS
+kafka-console-consumer --topic telemetry --from-beginning --bootstrap-server localhost:9092
+kafka-console-consumer --topic commands --from-beginning --bootstrap-server localhost:9092
+kafka-console-consumer --topic feedback --from-beginning --bootstrap-server localhost:9092

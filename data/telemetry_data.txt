@@ -1,0 +1,4 @@
+{"type":"TELEMETRY", "message_id": "1236a", "payload": [{"a":"b"}]}
+{"type":"TELEMETRY", "message_id": "1236b", "payload": []}
+{"type":"TELEMETRY", "message_id": "1236c", "payload": [{"a":"b", "c":{"d":5}}]}
+{"type":"TELEMETRY", "message_id": "1236d", "payload": [{"e": ["f", "g", "h"]}]}
