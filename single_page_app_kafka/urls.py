@@ -13,8 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework.authtoken import views
+from django_kafka.views import Register, get_data_with_user_name
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    url(r'^admin', admin.site.urls),
+    url(r'^api-auth/', include('rest_framework.urls')),
+    url(r'^login', views.obtain_auth_token, name='api_token_auth'),
+    url(r'^register_API_view', Register.as_view(), name='register'),
+    url(r'^get_data_with_user_name', get_data_with_user_name, name='get_data_with_user_name')
+
 ]
