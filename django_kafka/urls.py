@@ -1,4 +1,4 @@
-from django.conf.urls import url, include
+from django.conf.urls import url
 from .views import get_data_with_user_name
 
 urlpatterns = [
