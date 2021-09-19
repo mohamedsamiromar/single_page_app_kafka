@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<form method="GET"  action="django-kafka/get_data_with_user_name">
+    {% csrf_token %}
+</form>
+  {% for data in msg %}
+        <tr>
+        <td>{{ data. }}</td>
+        </tr>
+    {% endfor %}
+</html>
