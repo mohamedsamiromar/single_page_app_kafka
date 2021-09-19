@@ -12,27 +12,27 @@ from rest_framework import generics
 from confluent_kafka import Consumer
 import json
 
-class RegisterView(generics.CreateAPIView):
-    permission_classes = [permissions.AllowAny]
-
-    def post(self, request):
-        serializer = RegisterSerializer(data=request.data)
-        if serializer.is_valid():
-            first_name = serializer.validated_data['first_name']
-            last_name = serializer.validated_data['last_name']
-            email = serializer.validated_data['email']
-            username = serializer.validated_data['username']
-            password = serializer.validated_data['password']
-
-            user = User()
-            user.first_name = first_name
-            user.last_name = last_name
-            user.email = email
-            user.username = username
-            user.set_password(password)
-            user.save()
-            return Response(RegisterSerializer(user).data, status=status.HTTP_201_CREATED)
-        return Response(RegisterSerializer.errors, status=status.HTTP_400_BAD_REQUEST)
+# class RegisterView(generics.CreateAPIView):
+#     permission_classes = [permissions.AllowAny]
+#
+#     def post(self, request):
+#         serializer = RegisterSerializer(data=request.data)
+#         if serializer.is_valid():
+#             first_name = serializer.validated_data['first_name']
+#             last_name = serializer.validated_data['last_name']
+#             email = serializer.validated_data['email']
+#             username = serializer.validated_data['username']
+#             password = serializer.validated_data['password']
+#
+#             user = User()
+#             user.first_name = first_name
+#             user.last_name = last_name
+#             user.email = email
+#             user.username = username
+#             user.set_password(password)
+#             user.save()
+#             return Response(RegisterSerializer(user).data, status=status.HTTP_201_CREATED)
+#         return Response(RegisterSerializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(('GET',))
@@ -59,7 +59,7 @@ def get_data_with_user_name(request):
                     current = int(time.time() * 1000.0)
                     if current - last_none > 1000:
                         return Response(data, status=status.HTTP_201_CREATED)
-                if last_none is None:
+                if last_none is None :
                     last_none = int(time.time()*1000.0)
                 continue
                 # return Response(data, status=status.HTTP_201_CREATED)
@@ -85,5 +85,3 @@ def get_data_with_user_name(request):
         # Close down consumer to commit final offsets.
         consumer.close()
     return Response(data, status=status.HTTP_201_CREATED)
-
-
