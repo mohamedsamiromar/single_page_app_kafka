@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = '/auth/login/'
 
 # Application definition
 
@@ -83,6 +84,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'single_page_app_kafka.wsgi.application'
 
+PUBLIC_URLS = [
+    '/auth/login/',
+    '/auth/signup/'
+]
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

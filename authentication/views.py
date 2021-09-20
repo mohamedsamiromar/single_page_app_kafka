@@ -16,9 +16,9 @@ def signup(request):
             user = authenticate(username=user.username, password=raw_password)
             login(request, user)
             print(user)
-            return redirect('/')
+            return redirect('get_data_by_username')
         else:
-            return render(request, 'registration/signup.html', {'form': form})
+            return render(request, '../templates/registration/signup.html', {'form': form})
     else:
         form = SignUpForm()
-        return render(request, 'registration/signup.html', {'form': form})
+        return render(request, '../templates/registration/signup.html', {'form': form})

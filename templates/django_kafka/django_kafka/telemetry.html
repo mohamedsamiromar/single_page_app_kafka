@@ -5,14 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-
-</body>
-<form method="GET"  action="django-kafka/get_data_with_user_name">
     {% csrf_token %}
-</form>
-  {% for data in msg %}
+
+<h1>Telemetry</h1>
+  {% for data in topic_data %}
         <tr>
-        <td>{{ data. }}</td>
+        <td>{{ data.topic }}</td>
         </tr>
-    {% endfor %}
+  {% endfor %}
+</body>
+
 </html>
