@@ -29,7 +29,7 @@ def get_topic_telemetry(request):
                     if last_none is not None:
                         current = int(time.time() * 1000.0)
                         if current - last_none > 1000:
-                            return render(request, '../templates/django_kafka/django_kafka/telemetry.html',
+                            return render(request, '../templates/django_kafka/telemetry.html',
                                           {'topic_data': data})
                     if last_none is None:
                         last_none = int(time.time() * 1000.0)
@@ -51,11 +51,13 @@ def get_topic_telemetry(request):
                     # data.append(json.loads(msg.value()))
                     msg_count += 1
                     if msg_count == max_count:
-                        return render(request, '../templates/django_kafka/django_kafka/telemetry.html',
+                        return render(request, '../templates/django_kafka/telemetry.html',
                                       {'topic_data': data})
+
                     # if msg_count % MIN_COMMIT_COUNT == 0:
                     consumer.commit(asynchronous=True)
         finally:
             # Close down consumer to commit final offsets.
             consumer.close()
-        return render(request, '../templates/django_kafka/django_kafka/telemetry.html', {'topic_data': data})
+        return render(request, '../templates/django_kafka/telemetry.html',
+                      {'topic_data': data})
