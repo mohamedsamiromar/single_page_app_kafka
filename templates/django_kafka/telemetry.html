@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% csrf_token %}
+
+<h1>Telemetry</h1>
+  {% for data in topic_data %}
+        <tr>
+        <td>{{ data.topic }}</td>
+        </tr>
+  {% endfor %}
+</body>
+
+</html>
