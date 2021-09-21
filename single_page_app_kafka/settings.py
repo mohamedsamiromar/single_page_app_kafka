@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-v@v1&otraxq+2m&ac3t4g&joaw$gdxs!n)-hr&9#x381xeydvv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['single-page-app-kafka.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 LOGIN_URL = '/auth/login'
 
@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'django_kafka',
     'rest_framework',
     # 'rest_framework.authtoken',
-    'authentication'
+    'authentication',
+    'whitenoise.runserver_nostatic',
+
 ]
 
 # REST_FRAMEWORK = {
@@ -55,9 +57,11 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+
+    # Add whitenoise middleware here
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
-    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -140,7 +144,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 STATIC_URL = '/static/'
 
 # Default primary key field type

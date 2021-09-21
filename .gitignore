@@ -130,3 +130,8 @@ dmypy.json
 
 # Macs
 .DS_Store
+
+
+
+echo "db.sqlite3" > .gitignore
+echo "env/" >> .gitignore
