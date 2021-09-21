@@ -9,8 +9,7 @@
 # from rest_framework import generics
 # from confluent_kafka import Consumer
 # import json
-# from confluent_kafka import Producer
-# import socket
+
 #
 #
 # class RegisterView(generics.CreateAPIView):
@@ -86,14 +85,3 @@
 #         consumer.close()
 #     return Response(data, status=status.HTTP_201_CREATED)
 #
-# #
-# # @api_view(('POST',))
-# # def wiret_data_producer_api(request):
-# #     conf = {'bootstrap.servers': "localhost:9092",
-# #             'client.id': socket.gethostname()}
-# #
-# #     producer = Producer(conf)
-# #     topic = "telemetry"
-# #     producer.produce(topic, key="key", value='{"type":"TELEMETRY", "message_id": "1236a", "payload": [{"a":"b"}]}')
-# #     producer.flush()
-# #     return Response({'message': 'Data sent too kafka successfully'}, status=status.HTTP_201_CREATED)

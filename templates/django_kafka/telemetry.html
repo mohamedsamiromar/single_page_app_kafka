@@ -8,11 +8,20 @@
     {% csrf_token %}
 
 <h1>Telemetry</h1>
-  {% for data in topic_data %}
+    <table width="100%", border="1">
+    <tr>
+        <th>Type</th>
+        <th>Message Id</th>
+        <th>Payload</th>
+    </tr>
+  {% for item in topic_data %}
         <tr>
-        <td>{{ data.topic }}</td>
+            <td>{{ item.type }}</td>
+            <td>{{ item.message_id }}</td>
+            <td>{{ item.payload }}</td>
         </tr>
   {% endfor %}
+    </table>
 </body>
 
 </html>
