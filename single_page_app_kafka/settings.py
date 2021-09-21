@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 LOGIN_URL = '/auth/login'
 
 # Application definition
-# change here
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
