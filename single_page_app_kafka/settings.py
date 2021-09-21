@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-v@v1&otraxq+2m&ac3t4g&joaw$gdxs!n)-hr&9#x381xeydvv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['single-page-app-kafka-django.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['single-page-app-kafka.herokuapp.com', '127.0.0.1']
 
 LOGIN_URL = '/auth/login'
 
