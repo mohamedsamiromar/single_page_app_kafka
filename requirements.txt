@@ -28,4 +28,6 @@ unittest-xml-reporting==2.5.1
 unittest2py3k==0.5.1
 urllib3==1.25.9
 
+gunicorn==19.7.1
+
 docutils~=0.15.2

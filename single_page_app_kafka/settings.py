@@ -23,11 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-v@v1&otraxq+2m&ac3t4g&joaw$gdxs!n)-hr&9#x381xeydvv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['single-page-app-kafka.herokuapp.com', '127.0.0.1']
 
-LOGIN_URL = '/auth/login/'
+LOGIN_URL = '/auth/login'
 
 # Application definition
 
@@ -88,6 +88,8 @@ PUBLIC_URLS = [
     '/auth/login/',
     '/auth/signup/'
 ]
+
+LOGIN_REDIRECT_URL = '/home'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

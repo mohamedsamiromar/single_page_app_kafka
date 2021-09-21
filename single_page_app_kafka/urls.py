@@ -20,15 +20,12 @@ from rest_framework.authtoken import views
 # from django_kafka.views import RegisterView, get_data_with_user_name
 
 urlpatterns = [
-    # url('', TemplateView.as_view(template_name='../templates/home.html'), name="home"),
+    url('home', TemplateView.as_view(template_name='../templates/home.html'), name="home"),
     url(r'^admin', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls')),
     # url(r'^login', views.obtain_auth_token, name='api_token_auth'),
     # url(r'^register', RegisterView.as_view(), name='register'),
     url(r'^auth/', include('authentication.urls')),
     url(r'^django-kafka/', include('django_kafka.urls'))
-
-
-
 
 ]

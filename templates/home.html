@@ -5,17 +5,21 @@
     <title>Title</title>
 </head>
 <body>
-<table style="width:60%" border="1">
+<form  action="{% url 'home' %}">
+<table style="width:100%" border="1">
   <tr>
     <td>Telemetry</td>
     <td>Commands</td>
     <td>Feedback</td>
   </tr>
   <tr>
-    <td><a href="django-kafka/load/topic/telemetry">link text</a></td>
-    <td><a href="django-kafka/load/topic/commands">link text</a></td>
-    <td><a href="django-kafka/load/topic/feedback">link text</a></td>
+    <td><a href="django-kafka/telemetry">link text</a></td>
+    <td><a href="django-kafka/commands">link text</a></td>
+    <td><a href="django-kafka/feedback">link text</a></td>
   </tr>
 </table>
+            <td><a href="/auth/login/">Log out</a></td>
+
+</form>
 </body>
 </html>

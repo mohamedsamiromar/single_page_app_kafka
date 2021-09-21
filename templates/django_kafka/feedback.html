@@ -5,13 +5,25 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Feedback</h1>
     {% csrf_token %}
-  {% for data in topic_data %}
+
+<h1>Feedback</h1>
+    <table width="100%", border="1">
+    <tr>
+        <th>Type</th>
+        <th>Message Id</th>
+        <th>Payload</th>
+    </tr>
+  {% for item in topic_data %}
         <tr>
-        <td>{{ data.topic }}</td>
+            <td>{{ item.type }}</td>
+            <td>{{ item.message_id }}</td>
+            <td>{{ item.payload }}</td>
         </tr>
   {% endfor %}
+    </table>
+<a href="/home"><h2>Back</h2></a>
+
 </body>
 
 </html>
