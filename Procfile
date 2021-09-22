@@ -1,2 +1,2 @@
-web: gunicorn single_page_app_kafka.wsgi
+web: gunicorn single_page_app_kafka.wsgi --log-file -
 
