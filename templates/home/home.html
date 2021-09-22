@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  action="{% url 'home' %}">
+<table style="width:80%" border="1">
+  <tr>
+    <td><h2>Telemetry</h2></td>
+    <td><h2>Commands</h2></td>
+    <td><h2>Feedback</h2></td>
+  </tr>
+    <td>
+
+       <h4> <a href="django-kafka/commands-last-offest"> Last Offest</a></h4>
+       <h4> <a href="django-kafka/telemetry-last-massage">Last Massage</a></h4>
+        <h4><a href="django-kafka/telemetry-from-beginng">From Beging</a></h4>
+        <h4><a href="django-kafka/telemetry-timestamps">Time Stap</a></h4>
+    </td>
+    <td>
+        <h4> <a href="django-kafka/commands-last-offest"> Last Offest</a></h4>
+        <h4> <a href="django-kafka/commands-last-massage">Last Massage</a></h4>
+        <h4><a href="django-kafka/commands-from-beginng">From Beging</a></h4>
+        <h4><a href="django-kafka/commands-from-beginng">Time Stap</a></h4>
+    </td>
+     <td>
+        <h4> <a href="django-kafka/feedback-last-offest"> Last Offest</a></h4>
+        <h4> <a href="django-kafka/feedback-last-massage">Last Massage</a></h4>
+        <h4><a href="django-kafka/feedback-from-beginng">From Beging</a></h4>
+        <h4><a href="django-kafka/feedback-timestamps">Time Stap</a></h4>
+    </td>
+</table>
+            <td><h4><a href="/auth/login/">Log out</a></h4></td>
+
+</form>
+</body>
+</html>

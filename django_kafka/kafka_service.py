@@ -42,7 +42,7 @@ def read_from_topic(topic, group_id, last_n_messages=None, from_beginning=False,
                     if last_none is None:
                         last_none = int(time.time() * 1000.0)
                     continue
-                    # return render(request, '../templates/django_kafka/django_kafka/telemetry.html',
+                    # return render(request, '../templates/django_kafka/django_kafka/telemetry-home.html',
                     #               {'topic_data': data})
 
                 if msg.error():

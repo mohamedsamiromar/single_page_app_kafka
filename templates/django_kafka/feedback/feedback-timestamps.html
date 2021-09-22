@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% csrf_token %}
+
+<h1>Feedback Time Stamp</h1>
+<input type="datetime-local" name="from_date_str" >
+<button type="submit" >Next</button>
+    <table width="100%" border="1">
+     <tr>
+        <th>Type</th>
+        <th>Message Id</th>
+        <th>Payload</th>
+    </tr>
+  {% for item in topic_data %}
+        <tr>
+            <td>{{ item.type }}</td>
+            <td>{{ item.message_id }}</td>
+            <td>{{ item.payload }}</td>
+        </tr>
+  {% endfor %}
+</table>
+<a href="/home"><h2>Back</h2></a>
+
+</body>
+</html>
