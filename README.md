@@ -29,6 +29,4 @@ Lastly, when attempting to read the data from kafka, the UI should ask the user 
     3. Query for all messages that were posted between 2 UTC timestamps
 * In addition to the above, there should be an optional string search capability that filters the results to only those where the message contains a string that matches the input provided
 
-## Questions?
 
-Please reach out to Aniket Soneji (aniket.soneji@auto-grid.com) with any questions. Thanks!
